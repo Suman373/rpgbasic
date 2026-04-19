@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://mdb22j1x4gip"]
+[gd_scene load_steps=8 format=3 uid="uid://mdb22j1x4gip"]
 
 [ext_resource type="Script" uid="uid://cwikt83ipe8wp" path="res://Scripts/player.gd" id="1_y0qk3"]
 [ext_resource type="Script" uid="uid://d2c2bkm8asddf" path="res://Scripts/camera_3d.gd" id="2_3y5cq"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
-radius = 0.4
-height = 1.8
+[ext_resource type="AudioStream" uid="uid://nvue2kr7cnui" path="res://Audio/grass_walk_sfx.mp3" id="3_0ad8t"]
+[ext_resource type="PackedScene" uid="uid://cvsehj4t2h6re" path="res://Model/Boy/boy_character_-_cartoon.glb" id="3_2i4gt"]
+[ext_resource type="AudioStream" uid="uid://dyc3l0p41cf4h" path="res://Audio/Flashlight on.wav" id="4_x20fu"]
+[ext_resource type="AudioStream" uid="uid://qo7adygheiu0" path="res://Audio/Flashlight off.wav" id="5_0ar0x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 radius = 0.4
@@ -14,12 +14,33 @@ height = 1.8
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_y0qk3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sh265")
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_2i4gt")]
+transform = Transform3D(-0.995582, -0.0082324, 0.0935301, -0.00921679, 0.999907, -0.0100979, -0.0934382, -0.0109153, -0.995565, 0.0197219, -0.89369, 0.00335407)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4flbx")
+debug_color = Color(0.737674, 0.422293, 0.542783, 0.42)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648041, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0382181, 0.648041, -0.318789)
 script = ExtResource("2_3y5cq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.252131, 0)
+visible = false
+light_color = Color(0.910578, 0.911282, 0.127848, 1)
+light_size = 0.312
+light_specular = 0.578
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 35.0
+
+[node name="SoundOn" type="AudioStreamPlayer3D" parent="Camera3D/SpotLight3D"]
+stream = ExtResource("4_x20fu")
+
+[node name="SoundOff" type="AudioStreamPlayer3D" parent="Camera3D/SpotLight3D"]
+stream = ExtResource("5_0ar0x")
+
+[node name="FootstepAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-0.995582, -0.0082324, 0.0935301, -0.00921679, 0.999907, -0.0100979, -0.0934382, -0.0109153, -0.995565, 0.0197219, -0.89369, 0.00335407)
+stream = ExtResource("3_0ad8t")

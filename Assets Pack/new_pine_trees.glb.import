@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cd5257qpvnxr1"
-path="res://.godot/imported/grass.glb-d672ac5dda913cffa30bc4990088dc06.scn"
+uid="uid://7s7iomrf8jrc"
+path="res://.godot/imported/new_pine_trees.glb-b3b6bab44545465bc53fcc39d6b5ae0a.scn"
 
 [deps]
 
-source_file="res://Model/grass.glb"
-dest_files=["res://.godot/imported/grass.glb-d672ac5dda913cffa30bc4990088dc06.scn"]
+source_file="res://Assets Pack/new_pine_trees.glb"
+dest_files=["res://.godot/imported/new_pine_trees.glb-b3b6bab44545465bc53fcc39d6b5ae0a.scn"]
 
 [params]
 
@@ -34,13 +34,13 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"grass_Plane_002": {
+"Sketchfab_Scene_Tree_Pine_T1_Tree_Pine_0": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Model/grass.res"
+"save_to_file/path": "res://Model/new_pine.res"
 }
 }
 }
