@@ -15,6 +15,10 @@ run/main_scene="uid://d2yhiq3wrmh55"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mixamo_animation_retargeter/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false

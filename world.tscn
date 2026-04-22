@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2yhiq3wrmh55"]
+[gd_scene load_steps=22 format=3 uid="uid://d2yhiq3wrmh55"]
 
 [ext_resource type="PackedScene" uid="uid://mdb22j1x4gip" path="res://Objects/player.tscn" id="1_f3sb7"]
 [ext_resource type="ArrayMesh" uid="uid://c40gtmrriaqlv" path="res://Model/grass.res" id="1_ioo17"]
 [ext_resource type="PackedScene" uid="uid://ckpjr7bwect8j" path="res://Model/tavern.glb" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://bx02vn0jfkikp" path="res://Scenes/swat.tscn" id="2_wse8f"]
 [ext_resource type="PackedScene" uid="uid://dds6s74xgigad" path="res://Model/CliffProps/cliffProps1.glb" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bwjqo8cevax24" path="res://Model/CliffProps/cliffProps4.glb" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://mcgywdh7j87g" path="res://Model/CliffProps/cliffProps2.glb" id="4_pkg7o"]
@@ -80,6 +81,7 @@ corner_radius_bottom_left = 5
 shape = SubResource("BoxShape3D_gv5m4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3962, 0, 0)
 material_override = SubResource("StandardMaterial3D_gv5m4")
 mesh = SubResource("QuadMesh_gv5m4")
 
@@ -87,6 +89,9 @@ mesh = SubResource("QuadMesh_gv5m4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31033, 0)
 material_override = SubResource("StandardMaterial3D_wse8f")
 multimesh = SubResource("MultiMesh_ioo17")
+
+[node name="Swat" parent="." instance=ExtResource("2_wse8f")]
+transform = Transform3D(-0.994594, 0.103138, 0.012035, -0.0995515, -0.980066, 0.171929, 0.0295276, 0.169802, 0.985036, -123.315, -105.05, -206.51)
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13153, 0.998663, -0.023172)
